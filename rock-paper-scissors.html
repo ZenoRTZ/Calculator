@@ -1,0 +1,120 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper & Scissors</title>
+</head>
+<style>
+    * {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        justify-content: center;
+        align-items: center;
+    }
+    .main {
+        background-color: black;
+        height: 75px;
+        width: 350px;
+        padding: 10px;
+        border-radius: 10px;
+        border: 10px solid gray;
+    }
+    #result {
+        width: 310px;
+        border-radius: 3px
+    }
+
+    .Baten {
+        width: 100px;
+        color: rgb(19, 11, 11);
+        border: 5px solid white;
+    }
+
+    .begitulah {
+        width: 300px;
+        height: 50px;
+        border: 5px solid black;
+        background-color: gold;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .bot {
+        width: 350px;
+        height: 150px;
+        border: 5px solid black;
+        background-color: darkgrey;
+        padding: 10px;
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <center>
+        <div class="main">
+            <center>
+                <input type="button" onclick="e('Batu')" value="Batu">
+                <input type="button" onclick="e('Kertas')" value="Kertas">
+                <input type="button" onclick="e('Gunting')" value="Gunting">
+                <br>
+                <br>
+                <input type="text" id="result">
+            </center>
+        </div>
+    </center>
+    <br>
+    <center>
+        <div class="begitulah">
+            <input type="text" id="hasil">
+        </div>
+    </center>
+    <br>
+    <center>
+        <div class="bot">
+            <center>
+                <h3>BOT</h3>
+                <br>
+                <input type="text" id="botty">
+            </center>
+        </div>
+    </center>
+    <br>
+    <br>
+    <br>    
+
+    
+    
+
+    <script>
+        function e(val){
+            document.getElementById("result").value = val
+            let e;
+            let f = Math.floor(Math.random() * 3)
+
+            if (f === 0){
+                e = "Batu"
+                document.getElementById("botty").value = "Batu"
+            }
+
+            if (f === 1){
+                e = "Kertas"
+                document.getElementById("botty").value = "Kertas"
+            }
+
+            if (f === 2){
+                e = "Gunting"
+                document.getElementById("botty").value = "Gunting"
+            }
+
+            if (val == e) {
+                document.getElementById("hasil").value = "Tak ada yang menang"
+            } else if (val == "Batu" && e == "Gunting" || val == "Kertas" && e == "Batu" || val == "Gunting" && e == "Kertas"){
+                document.getElementById("hasil").value = "Kamu Menang"
+            } else {
+                document.getElementById("hasil").value = "Kamu Kalah"
+            }
+
+         }
+
+         
+    </script>
+</body>
+</html>
